@@ -17,8 +17,8 @@ public class Main {
         Account account2=new SavingAccount(111);
 
 
-        account1.deposit(account1,2000);
-        account2.deposit(account2,3000);
+        account1.deposit(2000);
+        account2.deposit(3000);
 
         System.out.println(account.getNumber());
 

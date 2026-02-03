@@ -1,10 +1,15 @@
 package org.example;
 
+import java.util.logging.Logger;
+
 public class Bank {
-    public void transfer(Account src,Account dest,float amount){
-        if(src.getBalance()>amount){
-            src.setBalance(src.getBalance()-amount);
-            dest.setBalance(dest.getBalance()+amount);
-        }
+    Logger logger = Logger.getLogger("bank");
+    public boolean transfer(Account src,Account dest,float amount){
+        try{
+            src.withdraw(amount);
+        }catch(IllegalArgumentException e){
+            logger.severe(e.getMessage());
+        }dest.deposit(amount);
+        return true;
     }
 }

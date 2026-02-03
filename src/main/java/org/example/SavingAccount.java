@@ -7,9 +7,19 @@ public class SavingAccount extends Account{
     }
 
     @Override
-    public float deposit(Account account, float amount) {
-        account.setBalance(account.getBalance() + amount);
-        return account.getBalance();
+    public float deposit(float amount) {
+        this.setBalance(this.getBalance() + amount);
+        return this.getBalance();
+    }
+
+    public float withdraw(float amount){
+        if(amount <= this.getBalance() && amount > 0) {
+            this.setBalance(this.getBalance() - amount);
+        }else{
+            throw new IllegalArgumentException("amount is more than balance");
+        }
+        System.out.println("Withdraw: "+ this.getBalance());
+        return this.getBalance();
     }
 
 }
