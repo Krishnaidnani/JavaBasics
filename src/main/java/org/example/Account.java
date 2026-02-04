@@ -1,6 +1,6 @@
 package org.example;
 
-public abstract class Account {
+public abstract class Account implements BaseAccountInterface {
     private float balance;  //mutable
     ACCOUNT_TYPE type;
     private final int number;// immutable property
